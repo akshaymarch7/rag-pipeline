@@ -1,3 +1,19 @@
+## Basic RAG Project
+
+1. Create our knowlege base (some .txt files)
+2. Document Loading
+3. Chunking
+4. Create Embeddings
+5. Store the embedding into our Vector DB
+6. Create query
+7. Create Embeddings
+8. Retrive relevant chunks from vector DB
+9. Pass the chunks and query into LLM
+10. Generate the final response for our query
+
+
+## QDrant Demo
+
 1. Setup the Qdrant account
 2. Create a Cluster
 3. Setup the project - empty repo
