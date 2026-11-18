@@ -3,12 +3,16 @@ import { chunkDocument } from "./chunkDocument.js";
 import { createEmbeddings } from "./createEmbeddings.js";
 import { storeEmbeddings } from "./storeEmbeddings.js";
 
-const filePath = "./src/docs/sam.txt";
+await indexDocuments("./src/docs/dario.txt");
+await indexDocuments("./src/docs/sam.txt");
+await indexDocuments("./src/docs/musk.txt");
 
-const data = await loadDocument(filePath);
+async function indexDocuments(filePath) {
+  const data = await loadDocument(filePath);
 
-const chunks = chunkDocument(data);
+  const chunks = chunkDocument(data);
 
-const embeddings = await createEmbeddings(chunks);
+  const embeddings = await createEmbeddings(chunks);
 
-await storeEmbeddings(filePath, chunks, embeddings);
+  await storeEmbeddings(filePath, chunks, embeddings);
+}

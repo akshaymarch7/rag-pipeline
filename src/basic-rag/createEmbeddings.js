@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import "dotenv/config";
+import { EMBEDDING_MODEL_NAME, VECTOR_DIMENSION } from "./config.js";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -7,9 +8,9 @@ const openai = new OpenAI({
 
 export async function createEmbeddings(chunks) {
   const embeddings = await openai.embeddings.create({
-    model: "text-embedding-3-small",
+    model: EMBEDDING_MODEL_NAME,
     input: chunks,
-    dimension: 1536,
+    dimension: VECTOR_DIMENSION,
     encoding_format: "float",
   });
 

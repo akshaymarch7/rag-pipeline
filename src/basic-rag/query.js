@@ -3,7 +3,7 @@ import { retrieveChunks } from "./retrieveChunks.js";
 import { buildContext } from "./buildContext.js";
 import { generateResponse } from "./generateResponse.js";
 
-const query = "When and where was Sam Altman was born?";
+const query = "Who is Sundar Pichai?";
 
 const [embedding] = await createEmbeddings([query]);
 
